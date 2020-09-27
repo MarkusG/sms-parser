@@ -6,6 +6,6 @@ mms
 		part ct="image/jpeg" data="base64 encoded jpeg"
 	/parts
 	addrs
-		addr address="9495556969"
+		addr address="9495555555"
 	/addrs
 /mms
