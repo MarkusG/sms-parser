@@ -5,7 +5,7 @@ use std::io::BufReader;
 
 use xml::reader::{EventReader, XmlEvent};
 
-fn parse_addr(src: &str, chars: &str) -> String {
+fn strip_chars(src: &str, chars: &str) -> String {
     src.chars().filter(|&c| !chars.contains(c)).collect()
 }
 
@@ -35,7 +35,7 @@ fn main() {
                             "2" => String::from("O"),
                             _ => String::from("X")
                         },
-                        "address" => addr = parse_addr(&a.value, "()+- "),
+                        "address" => addr = strip_chars(&a.value, "()+- "),
                         "contact_name" => contact = a.value,
                         "body" => body = a.value,
                         _ => ()
